@@ -53,7 +53,6 @@
             <p><strong>Description:</strong> <%= product.getDescription() %></p>
             <p><strong>Price:</strong> <%= product.getCost() %></p>
 
-            <!-- Add to Cart Button -->
             <form action="${pageContext.request.contextPath}/addToCart" method="post">
                 <input type="hidden" name="productId" value="<%= product.getProductId() %>">
                 <input type="submit" value="Add to Cart">

@@ -22,7 +22,8 @@ public class SignUpServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Retrieve user information from the form
+
+        // Get info from sign up form
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String firstName = request.getParameter("firstName");
@@ -41,14 +42,13 @@ public class SignUpServlet extends HttpServlet {
         try {
             boolean success = userDAO.addUser(newUser);
             if (success) {
-                // User added successfully
+                // Success
                 response.sendRedirect(request.getContextPath() + "/login.jsp");
             } else {
-                // Error occurred while adding the user
+                // Error
                 response.sendRedirect(request.getContextPath() + "/error.jsp");
             }
         } catch (SQLException e) {
-            // Handle database error
             e.printStackTrace();
             response.sendRedirect(request.getContextPath() + "/error.jsp");
         }

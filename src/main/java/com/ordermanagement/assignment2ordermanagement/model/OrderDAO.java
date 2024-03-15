@@ -6,7 +6,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 
 public class OrderDAO {
     // Insert a new order into the database
@@ -43,15 +42,7 @@ public class OrderDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return -1; // Return -1 if order ID not found or an error occurs
+        return -1;
     }
 
-    private static Order extractOrderFromResultSet(ResultSet resultSet) throws SQLException {
-        int orderId = resultSet.getInt("order_id");
-        int userId = resultSet.getInt("user_id");
-        LocalDate orderDate = resultSet.getDate("order_date").toLocalDate();
-        String status = resultSet.getString("status");
-        double orderPrice = resultSet.getDouble("order_price");
-        return new Order(orderId, userId, orderDate, status, orderPrice);
-    }
 }

@@ -133,11 +133,7 @@ public class ProductDAO {
 
             int rowsAffected = statement.executeUpdate();
 
-            if (rowsAffected > 0) {
-                return true;
-            } else {
-                return false;
-            }
+            return rowsAffected > 0;
         } catch (SQLException e) {
             e.printStackTrace();
             return false;

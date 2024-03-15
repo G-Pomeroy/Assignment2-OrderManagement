@@ -14,6 +14,8 @@ public class User {
     private String province;
     private String postalCode;
 
+    //Constructor
+    //region
     public User(int userId, String username, String password, String firstName, String lastName, String phoneNum,
                 String email, String street, String city, String province, String postalCode) {
         this.userId = userId;
@@ -48,6 +50,8 @@ public class User {
         this.username = username;
         this.password = password;
     }
+
+    //endregion
 
     //Getters and Setters
     //region

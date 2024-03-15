@@ -41,7 +41,7 @@ public class CheckOutServlet extends HttpServlet {
 
         boolean orderCreated = OrderDAO.createOrder(newOrder);
 
-        if (orderCreated == true) {
+        if (orderCreated) {
             Map<Product, Integer> cart = (Map<Product, Integer>) session.getAttribute("cart");
 
             int orderId = OrderDAO.getOrderId(newOrder);

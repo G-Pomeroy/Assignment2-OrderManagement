@@ -19,6 +19,8 @@ public class OrderDetails {
         this.totalPrice = price;
     }
 
+    //Getters & Setters
+    //region
     public int getOrderDetailId() {
         return orderDetailId;
     }
@@ -58,4 +60,5 @@ public class OrderDetails {
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
+    //endregion
 }

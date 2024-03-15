@@ -25,7 +25,7 @@
     }
     List<OrderDetails> orderDetailsList = (List<OrderDetails>) session.getAttribute("orderDetailsList");
 
-    // Generate a random tracking code
+    // Generate a random mock tracking code
     String trackingCode = generateTrackingCode();
 %>
 

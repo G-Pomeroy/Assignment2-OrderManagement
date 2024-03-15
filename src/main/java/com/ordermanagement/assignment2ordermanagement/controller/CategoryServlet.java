@@ -18,22 +18,17 @@ public class CategoryServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // Get the selected category from the request parameters
         String category = request.getParameter("category");
 
-        // If no category parameter is present or it's "all", retrieve all products
         List<Product> products;
         if (category == null || category.equals("all")) {
             products = ProductDAO.getAllProducts();
         } else {
-            // If a category parameter is present, filter products by category
             products = ProductDAO.getProductsByCategory(category);
         }
 
-        // Set the product list as an attribute in the request
         request.setAttribute("products", products);
 
-        // Forward the request to the products.jsp page
         RequestDispatcher dispatcher = request.getRequestDispatcher("/products.jsp");
         dispatcher.forward(request, response);
     }

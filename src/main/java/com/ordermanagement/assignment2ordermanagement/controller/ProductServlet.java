@@ -18,7 +18,6 @@ public class ProductServlet extends HttpServlet {
             throws ServletException, IOException {
         response.sendRedirect(request.getContextPath() + "/category?category=all");
 
-            // Process the request as usual
             String category = request.getParameter("category");
             List<Product> products = ProductDAO.getProductsByCategory(category);
             request.setAttribute("products", products);

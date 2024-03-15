@@ -15,7 +15,6 @@ public class UserDAO {
         try {
             this.connection = DBConn.getConnection();
         } catch (SQLException e) {
-            // Handle the exception appropriately, e.g., log it or throw a runtime exception
             e.printStackTrace();
         }
     }
@@ -35,10 +34,10 @@ public class UserDAO {
             statement.setString(9, user.getProvince());
             statement.setString(10, user.getPostalCode());
             int rowsInserted = statement.executeUpdate();
-            return rowsInserted > 0;  // Return true if at least one row was inserted
+            return rowsInserted > 0;
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;  // Return false if there was an exception or no rows were inserted
+            return false;
         }
     }
 
@@ -95,15 +94,12 @@ public class UserDAO {
                 String province = resultSet.getString("province");
                 String postalCode = resultSet.getString("postal_code");
 
-                // Create a User object with the retrieved data
                 user = new User(userId, username, password, firstName, lastName,
                         phoneNum, email, street, city, province, postalCode);
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle any SQL exceptions
         } finally {
-            // Close resources
             try {
                 if (resultSet != null) {
                     resultSet.close();
@@ -118,7 +114,6 @@ public class UserDAO {
                 e.printStackTrace();
             }
         }
-
         return user;
     }
 }

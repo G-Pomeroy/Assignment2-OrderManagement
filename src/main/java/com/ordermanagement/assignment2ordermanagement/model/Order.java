@@ -11,9 +11,6 @@ public class Order {
     private String status;
     private double orderPrice;
 
-    // Constructors, getters, and setters
-
-
     public Order() {
     }
 
@@ -25,6 +22,8 @@ public class Order {
         this.orderPrice = orderPrice;
     }
 
+    //Getters & Setters
+    //region
     public int getOrderId() {
         return orderId;
     }
@@ -64,4 +63,5 @@ public class Order {
     public void setOrderPrice(double orderPrice) {
         this.orderPrice = orderPrice;
     }
+    //endregion
 }

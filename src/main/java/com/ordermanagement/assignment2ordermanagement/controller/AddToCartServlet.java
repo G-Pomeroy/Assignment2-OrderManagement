@@ -47,7 +47,6 @@ public class AddToCartServlet extends HttpServlet {
 
             response.sendRedirect(request.getContextPath() + "/cart.jsp");
         } else {
-            // If the product is not found, handle the error
             System.out.println("Theres an issue lol");
             response.sendRedirect(request.getContextPath() + "/error.jsp");
         }
